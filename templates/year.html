@@ -1,0 +1,107 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Data page template for year entry</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+</head>
+
+
+<body>
+
+  <div class="iconRow">
+         <a href="/">
+         <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
+         <a href="/info.html">
+          <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
+
+
+
+  <div class = "form2">
+    <button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i>
+      </button>
+    <input type="text" placeholder="Enter a word, year, or year range" method="put" id="search">
+  </div>
+
+  </div>
+
+</br>
+</br>
+
+
+<div class= "centered">
+    <div class = "header">
+    <p>{{ year }}</p>
+    </div>
+</div>
+
+
+
+<!-- shows two relevant lists on the left of the page: top words, top songs!-->
+<div class = "listBox">
+
+    <div class="boxBorder centered">
+        <h3>
+            Top words of {{ year }}
+            </h3>
+        Top 200 words said in the year, after filtering out common words. This list scrolls.
+
+        <div class="scroller">
+            <table>
+                <tr><th>Word</th><th>Count</th></tr>
+                {% for wordAndCount in topWords %}
+                    <tr><td>{{ wordAndCount[0] }} </td><td>{{ wordAndCount[1] }}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+  <div class = "boxBorder centered">
+        <h3>
+             Top songs of {{ year }}
+            </h3>
+        Here's what the billboard charts looked like this year.
+
+        <div class="scroller">
+            <table>
+                <tr><th>Ranking</th><th>Artist</th> <th>Song</th></tr>
+                {% for rankAndSong in topSongs %}
+                    <tr><td> {{rankAndSong[0]}} </td><td>{{ rankAndSong[1] }}</td><td>{{ rankAndSong[2] }}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div class ="wordCloudBox centered">
+    <img src ="{{ url_for('static', filename='wordCloud.png') }}" alt="wordCloud for year">
+</div>
+
+<script type="text/javascript">
+
+/* js code to properly format the url from the user input */
+	 function sendToPage(){
+	 	 var input = document.getElementById("search").value;
+	 	 var code = "/query/";
+	 	 var codedInput = code.concat(input);
+	 	 location.href = codedInput;
+	 	     return false;
+	 			}
+
+/* js code that registers the "enter" key as submit */
+	 document.getElementById("search")
+	 .addEventListener("keyup", function(event) {
+	     event.preventDefault();
+	     if (event.code === 'Enter') {
+	         document.getElementById("searchButton").click();
+	     }
+	 });
+
+</script>
+
+</body>
+
+</html>

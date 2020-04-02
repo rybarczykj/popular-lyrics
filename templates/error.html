@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Error page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+</head>
+
+
+<body>
+
+  <div class="iconRow">
+         <a href="/">
+         <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
+         <a href="/info.html">
+          <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
+
+
+
+  <div class = "form2">
+    <button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i>
+      </button>
+    <input type="text" placeholder="Enter a word, year, or year range" method="put" id="search">
+  </div>
+
+  </div>
+
+
+  </br>
+  </br>
+
+
+
+<div class="centeredBox">
+    <div class="header"> Sorry! </div>
+    <h2>{{errorMsg}}</h2>
+</div>
+
+<div class= "centered">
+    <h3>Possible reasons </h3>
+    <p> your artist wasn't ever in the top 100 charts from 1965-2015</p>
+    <p> your word wasn't in the charts from 1965-2015</p>
+    <p> your input is null</p>
+    <p> your word has punctuation</p>
+    <p> your year is not within 1965-2015</p>
+    <p> year range not seperated by dash (-)</p>
+    <p> note: if you want to search a year as a word, use quotes around it <p>   
+</div>
+
+
+
+
+
+
+<script type="text/javascript">
+
+/* js code to properly format the url from the user input */
+	 function sendToPage(){
+	 	 var input = document.getElementById("search").value;
+	 	 var code = "/query/";
+	 	 var codedInput = code.concat(input);
+	 	 location.href = codedInput;
+	 	     return false;
+	 			}
+
+/* js code that registers the "enter" key as submit */
+	 document.getElementById("search")
+	 .addEventListener("keyup", function(event) {
+	     event.preventDefault();
+	     if (event.code === 'Enter') {
+	         document.getElementById("searchButton").click();
+	     }
+	 });
+
+</script>
+
+</body>
+
+
+
+</html>

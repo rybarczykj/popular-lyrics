@@ -1,0 +1,16 @@
+#Just a reminder of how we created our tables in the database
+
+
+
+DROP TABLE IF EXISTS ARTIST CASCADE;
+CREATE TABLE ARTIST (
+  Name VARCHAR(100) PRIMARY KEY
+  );
+
+DROP TABLE IF EXISTS WORDCOUNT CASCADE;
+CREATE TABLE WORDCOUNT (
+  SongID INTEGER REFERENCES SONG(ID),
+  Word VARCHAR(100),
+  Frequency INTEGER,
+  PRIMARY KEY(Word, SongID)
+  );

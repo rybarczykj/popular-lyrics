@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+<title>The Best Lyrical Analysis Website of All Time</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+
+<div class="row">
+       <a href="/">
+       <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
+       <a href="info.html">
+        <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
+</div>
+
+<div class = "mainSearchContent">
+
+	<div class="centeredBox">
+	  <div class="header"> Music's most popular words </div>
+	  <h3>Analyzing the lyrics on billboard's top 100 charts, 1965 to 2015.</h3>
+	</div>
+
+
+	<div class = "searchBox">
+
+		<div class = "searchBar">
+	  	<input type="text" placeholder="Enter a word, artist, year, or year range (e.g. 2005,2008 ; 1990-1996)" method="put" id="search">
+	  	<button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i></button>
+		</div>
+		
+		<div class = "checkBoxWrapper">
+			<div class = "checkArtist">
+				<input type="checkbox" id="artistCheck" name="artistCheck" onclick="toggleCheckbox()">
+				<label for="artistCheck"> Are you searching for an artist?</label><br>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+
+<script type="text/javascript">
+/* js code that registers the "enter" key as submit */
+	 document.getElementById("search")
+	 .addEventListener("keyup", function(event) {
+	     event.preventDefault();
+	     if (event.code === 'Enter') {
+	         document.getElementById("searchButton").click();
+	     }
+	 });
+
+
+/* js code to properly format the url from the user input */
+
+	 function sendToPage(){
+	 	 var input = document.getElementById("search").value;
+		 if(!artistCheck.checked){
+			 var code = "/query/";
+		 }else if(artistCheck.checked){
+			 var code = "/artist/";
+		 }
+		 	 var codedInput = code.concat(input);
+		 	 location.href = codedInput;
+		 	     return false;
+		}
+</script>
+
+
+</body>
+</html>
