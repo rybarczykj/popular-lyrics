@@ -1,12 +1,21 @@
-#Just a reminder of how we created our tables in the database
-
-
-
+/*
+How we created table
+*/
 DROP TABLE IF EXISTS ARTIST CASCADE;
 CREATE TABLE ARTIST (
-  Name VARCHAR(100) PRIMARY KEY
+  [Name] VARCHAR(100) PRIMARY KEY
   );
 
+-- via songTable.CSV
+DROP TABLE IF EXISTS SONG CASCADE;
+CREATE TABLE SONG (
+  [Name] VARCHAR(100),
+  Artist VARCHAR(100),
+  [Year] INTEGER,
+  ID INTEGER
+);
+
+-- via wordcountTable.CSV
 DROP TABLE IF EXISTS WORDCOUNT CASCADE;
 CREATE TABLE WORDCOUNT (
   SongID INTEGER REFERENCES SONG(ID),
