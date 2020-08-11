@@ -6,7 +6,7 @@ import psycopg2
 
 
 
-def connect(user, password):
+def connect(user,password):
 	'''
 	Establishes a connection to the database with the following credentials:
 		user - username, which is also the name of the database
@@ -17,7 +17,7 @@ def connect(user, password):
 	Note: exits if a connection cannot be established.
 	'''
 	try:
-		connection = psycopg2.connect(database=user, user=user, password=password, host="localhost")
+		connection = psycopg2.connect(database=user, user=user,password=password, host="localhost")
 	except Exception as e:
 		print("Connection error: ", e)
 		exit()
@@ -30,9 +30,9 @@ class DataSource:
 	or some other collection or object.
 	'''
 	def __init__(self):
-		user = 'rybarczykj'
-		password = 'carpet239barn'
-		self.connection = connect(user, password)
+		user = 'ec2-user'
+		password = 'rainbowtrout1612'
+		self.connection = connect(user,password)
 
 	def closeConnection(self):
 		self.connection.close()
