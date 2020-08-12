@@ -17,7 +17,7 @@ def connect(user,password):
 	Note: exits if a connection cannot be established.
 	'''
 	try:
-		connection = psycopg2.connect(database=user, user=user,password=password, host="localhost")
+		connection = psycopg2.connect(database=user, user=user,password=password)
 	except Exception as e:
 		print("Connection error: ", e)
 		exit()
@@ -220,7 +220,7 @@ class DataSource:
 			query = ("SELECT SONG.Ranking, SONG.Artist, SONG.Name "
 						"FROM SONG "
 							"WHERE SONG.BillboardYear = (%s) "
-						"ORDER BY length(SONG.Ranking), SONG.Ranking ASC "
+						"ORDER BY SONG.Ranking ASC "
 						"LIMIT (%s);")
 
 			cursor.execute(query, (str(year), str(numberOfSongs)))
