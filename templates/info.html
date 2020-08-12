@@ -31,19 +31,36 @@
 
 
 <div class="infoWrapper">
-				<div class = "dataHeader"> About The Data </div>
-        <h3> What is the data? </h3>
-            <p> The dataset compliles the year end Billboard top-100 song list from the years 1965 to 2015. </p>
+				<div class = "dataHeader"> About</div>
+		<h3>Who made this and why?</h3>
+		<p> This website was made as final project for a Software Design class at Carleton College 
+			in winter 2020 by Jack, Will, and Zev.</p>
+		<h3> "Musics's most popular words"? By what metric?</h3>
+				<p> The data comes from the year-end Billboard top 100 charts from the years 1965 to 2015. If a word had more appearances in the 
+					charts, it's more popular.
+				</p>
+		<h3>What words do you filter out?</h3>
+		<p>I, me, the, a, etc. See the full list at the <a href="https://github.com/rybarczykj/popular-lyrics">github repo</a> at data/commonWords.csv</p>
         <h3> Where did this data come from? </h3>
-            <p> The data was scraped from wikipedia.com and a few lyric sites like metrolyrics.com.  </p>
-        <h3> Who created the dataset? </h3>
-            <p> The dataset was originally created and uploaded to Github by Kaylin Pavlik and again published to Kaggle by RakanNimer. </p>
-        <h3> Can I use the data too? </h3>
-          <p> Yes! it is cc from https://github.com/walkerkq/musiclyrics </p>
-        <h3> Can I search a number as a word?</h3>
-          <p> Yes. Put it in quotes. </p>
-        <h3>Known Issues</h3>
-        <p> Songs which appear in consecutive years are double-counted. We think this is fine for the year's most popular words purpose, but it could be a little misleading for artist data.</p>
+		<p> The dataset was originally created and uploaded to Github by Kaylin Pavlik and again published to Kaggle by RakanNimer.
+			Billboard data was scraped from wikipedia.com and lyric data was scraped from various lyrics sites. Check out the
+			<a href = "https://github.com/walkerkq/musiclyrics"> source </a> for more info.
+		 </p>
+		<h3> Can I draw any meaningful conclusions from this data about word usage?</h3>
+		<p> All we do is show how much a word was said in the billboard charts, so probably not. Here's a couple reasons why:
+			<ul>
+				<li> We don't control for overall number of words said in a year. Recent popularity of rap probably means songs say more words, so 
+					words may tend to look more popular even if they appear less per 100 words.</li>
+				<li> We don't control for distrubtion of words. A word is probably more "popular" said once across 100 differents songs
+					rather than 100 times in one song, but it would look the same on our chart.
+				</li>
+				<li>
+					Limited data. We only look at 100 songs per year. That's not a lot of data.
+				</li>
+			</ul>
+
+		</p>
+		
 </div>
 </div>
 
