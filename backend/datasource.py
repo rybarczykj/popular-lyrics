@@ -93,7 +93,6 @@ class DataSource:
                     return 0
         except Exception as e:
             raise e  # Raised again so unittest suite can read it
-            return None
 
     def getUniqueWordInstancesInYear(self, word, year):
         """
@@ -125,7 +124,6 @@ class DataSource:
                     return 0
         except Exception as e:
             raise e  # Rasied again so unittest suite can read it
-            return None
 
     def getWordTrendList(self, word, year1=1965, year2=2015):
         """
@@ -188,7 +186,7 @@ class DataSource:
 			songID - the song ID of the song that will be checked.
 		"""
         try:
-            results = self.getWordInstancesInSong(self, word, songID)
+            results = self.getWordInstancesInSong(word, songID)
             if results != 0:
                 return True
             else:
@@ -208,7 +206,6 @@ class DataSource:
         try:
             if (year < 1965) or (year > 2015):
                 raise ValueError("year should be within the range 1965-2015.")
-                print(year)
             else:
                 cursor = self.connection.cursor()
                 query = (
