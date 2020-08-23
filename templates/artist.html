@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Data page template for year entry</title>
-  <link rel="stylesheet" href="../static/siteStyle.css">
+  <title>Data page template for artist entry</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
 </head>
 
 
@@ -21,7 +21,7 @@
 
     <div class = "minibar">
         <button type="submit" onclick="sendToPage();" id="searchButton"> 
-            <img src="../static/search.png" height="10px">
+            <img src="{{ url_for('static', filename='search.png') }}" height="10px">
         </button>
         <input type="search" placeholder="Enter a word, year, or year range" method="put" id="search">
     </div>
@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="card">
-        <img src ="../static/wordCloud.png" alt="wordCloud for year">
+        <img src ="{{ url_for('static', filename='wordCloud.png') }}" alt="wordCloud for year">
     </div>
     
 </div>
