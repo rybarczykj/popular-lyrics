@@ -1,123 +1,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-
-}
-
-
-
-/* Style forms searchbar */
-
-.mainSearchContent{
-  text-align: center;
-}
-
-.searchBox{
-  padding: 50px;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: center;
-}
-
-.searchBar input[type=text]{
-    width: inherit;
-    padding: inherit;
-    display: inherit;
-    border-radius: inherit;
-    font-size: inherit;
-    background: White;
-    border: solid black;
-}
-
-.searchBar button{
-    border-radius: inherit;
-    display: inline;
-    padding: inherit;
-    text-align: inherit;
-    width: 15%;
-    background: #2196F3;
-    font-size: inherit;
-    border: solid black;
-    cursor: pointer;
-}
-
-.checkBoxWrapper{
-  display: inline-block;
-  border-radius: 15px;
-  width: 80%;
-  height: 30px;
-  padding: 10px;
-  text-align: center;
-  font-size: 18px;
-}
-
-.checkArtist {
-  padding-top: 15px;
-  float: left;
-}
-
-
-.form2 input[type=text] {
-  width:30%;
-  box-sizing: border-box;
-  border: 2px solid black;
-  border-radius: inherit;
-  font-size: inherit;
-  background-color: white;
-  background-image: url('searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
-  float: right;
-  z-index: inherit;
-}
-
-.form2 input[type=text]:focus {
-  width:77%;
-}
-
-.form2 button{
-    border-radius: inherit;
-    width: 23%;
-    padding: inherit;
-    background: #2196F3;
-    font-size: inherit;
-    border: solid black;
-    cursor: pointer;
-    float: inherit;
-    z-index: inherit;
-}
-
-
-
-/* Styles forms (like search bars and buttons)*/
-.searchBar {
-    display: inline-block;
-    border-radius: 15px;
-    width: 80%;
-    height: 30px;
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-}
-
-.form2 {
-    border-radius: 15px;
-    height: 100px;
-    padding: 10px;
-    text-align: center;
-    font-size: 18px;
-    float: right;
-    z-index: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 
@@ -127,35 +11,119 @@ body {
   border-radius: 20px;
 }
 
-.dataHeader {
-  font-size: 5em;
-  padding-bottom: 20px;
-  border: 0px solid black;
-  border-radius: 20px;
-  margin: auto;
-}
-
-.boxBorder {
-  border: 2px solid black;
-  border-radius: 20px;
-  margin: 10px;
-}
-
-
-
-.row{
-  display: inline-block;
-}
-
-.iconRow{
-  display: inline;
-}
-
 .centered {
   text-align: center;
 }
 
+
+
+/* All search input boxes */
+input[type=search]{
+  border-radius: 15px;
+  border: 0px;
+  box-shadow: 0px 1px 7px  grey;
+  height: 90%;
+
+}
+/* All buttons */
+button{
+  border-radius: 15px;
+  height: 50px;
+  width: 50px;
+  background: white;
+  border: 0px ;
+  cursor: pointer;
+  font-size: inherit;
+  box-shadow: 0px 1px 7px  grey;
+
+}
+
+.searchBar {
+  display: inline-block;
+  margin-top: 20px;
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  
+}
+
+.searchBar input[type=search]{
+    width: 95%;
+    margin: 2px;
+    font-size: inherit;
+
+}
+
+.checkBoxWrapper{
+  display: inline-block;
+  width: 80%;
+  padding: 20px;
+}
+
+
+
+.minibar {
+  height: 50px;
+  width: 400px;
+
+  text-align: center;
+  font-size: 18px;
+
+  float: right;
+  padding-right: 10px;
+}
+
+
+.minibar input[type=search] {
+  width:30%;
+  height: 90%;
+
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  float: inherit;
+}
+
+.minibar input[type=search]:focus {
+  width:77%;
+}
+
+.minibar button{
+    float: inherit;
+    height: 90%;
+    margin-left: 10px;
+
+}
+
+
+.card {
+  display: inline-block;
+  vertical-align: top; 
+
+  border-radius: 20px;
+  box-shadow: 0px 1px 7px  grey;
+
+  margin: 20px;
+  padding: 20px;
+
+  max-width: 800px;
+}
+
+
+.iconRow{
+  display: block;
+  height: 50px;
+  padding-top: 10px;
+  padding-left: 10px;
+
+}
+
+.iconRow a{
+  text-decoration: none;
+}
+
 .centeredBox {
+  display: block;
   text-align: center;
   margin-left: 10px;
   margin-right: 10px;
@@ -163,22 +131,10 @@ body {
 }
 
 .infoWrapper{
+  margin: auto;
   text-align: left;
-  margin-left: 30px;
+  max-width: 800px;
 }
-
-.listBox{
-    float: left;
-    width: 40%;
-    margin-left: 20px;
-}
-
-.wordCloudBox{
-    width: 40%;
-    float: right;
-    margin-right: 30px;
-}
-
 
 .scroller {
     height:400px;

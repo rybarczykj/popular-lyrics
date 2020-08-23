@@ -5,7 +5,7 @@
   <meta charset="utf-8">
 
   <title>Data page template for year entry</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+  <link rel="stylesheet" href="../static/siteStyle.css">
 </head>
 
 
@@ -19,13 +19,14 @@
 
 
 
-  <div class = "form2">
-    <button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i>
-      </button>
-    <input type="text" placeholder="Enter a word, year, or year range" method="put" id="search">
-  </div>
+    <div class = "minibar">
+        <button type="submit" onclick="sendToPage();" id="searchButton"> 
+            <img src="../static/search.png" height="10px">
+        </button>
+        <input type="search" placeholder="Enter a word, year, or year range" method="put" id="search">
+    </div>
 
-  </div>
+    </div>
 
 </br>
 </br>
@@ -39,9 +40,9 @@
 
 
 <!-- shows two relevant lists on the left of the page: top words, top songs!-->
-<div class = "listBox">
+<div class = "centeredBox">
 
-    <div class="boxBorder centered">
+    <div class="card">
         <h3>
             Words from {{ artist }}'s top songs.
             </h3>
@@ -56,11 +57,12 @@
             </table>
         </div>
     </div>
+    <div class="card">
+        <img src ="../static/wordCloud.png" alt="wordCloud for year">
+    </div>
+    
 </div>
 
-<div class ="wordCloudBox centered">
-    <img src ="{{ url_for('static', filename='wordCloud.png') }}" alt="wordCloud for year">
-</div>
 
 <script type="text/javascript">
 

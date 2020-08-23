@@ -5,27 +5,28 @@
   <meta charset="utf-8">
 
   <title>Data page template for year entry</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+  <link rel="stylesheet" href="../static/siteStyle.css">
 </head>
 
 
 <body>
 
-  <div class="iconRow">
-         <a href="/">
-         <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
-         <a href="/info.html">
-          <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
+    <div class="iconRow">
+        <a href="/">
+        <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
+        <a href="/info.html">
+         <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
 
 
 
-  <div class = "form2">
-    <button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i>
-      </button>
-    <input type="text" placeholder="Enter a word, year, or year range" method="put" id="search">
-  </div>
+   <div class = "minibar">
+       <button type="submit" onclick="sendToPage();" id="searchButton"> 
+           <img src="../static/search.png" height="10px">
+       </button>
+       <input type="search" placeholder="Enter a word, year, or year range" method="put" id="search">
+   </div>
 
-  </div>
+   </div>
 
 </br>
 </br>
@@ -40,9 +41,9 @@
 
 
 <!-- shows two relevant lists on the left of the page: top words, top songs!-->
-<div class = "listBox">
+<div class = "centeredBox">
 
-    <div class="boxBorder centered">
+    <div class="card">
         <h3>
             Top words of {{ year }}
             </h3>
@@ -57,16 +58,19 @@
             </table>
         </div>
     </div>
+    <div class ="card">
+        <img src ="../static/wordCloud.png" alt="wordCloud for year">
+    </div>
+    
 
-  <div class = "boxBorder centered">
+  <div class = "card">
         <h3>
-             Top songs of {{ year }}
+            {{ year }} Billboard Charts
             </h3>
-        Here's what the billboard charts looked like this year.
 
         <div class="scroller">
             <table>
-                <tr><th>Ranking</th><th>Artist</th> <th>Song</th></tr>
+                <tr><th>Rank</th><th>Artist</th> <th>Song</th></tr>
                 {% for rankAndSong in topSongs %}
                     <tr><td> {{rankAndSong[0]}} </td><td>{{ rankAndSong[1] }}</td><td>{{ rankAndSong[2] }}</td></tr>
                 {% endfor %}
@@ -74,11 +78,9 @@
         </div>
     </div>
 
+   
 </div>
 
-<div class ="wordCloudBox centered">
-    <img src ="{{ url_for('static', filename='wordCloud.png') }}" alt="wordCloud for year">
-</div>
 
 <script type="text/javascript">
 

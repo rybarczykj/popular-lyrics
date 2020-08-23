@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+	<link rel="stylesheet" href="../static/siteStyle.css">
 <title>The Best Lyrical Analysis Website of All Time</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,36 +10,38 @@
 
 <body>
 
-<div class="row">
+<div class="iconRow">
        <a href="/">
        <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
        <a href="info.html">
         <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
 </div>
 
-<div class = "mainSearchContent">
+<div class = "centered">
 
 	<div class="centeredBox">
-	  <div class="header"> Music's most popular words </div>
-	  <h3>Analyzing the lyrics on billboard's top 100 charts, 1965 to 2015.</h3>
+	  <div class="header"> asdasds </div>
+	  <!-- <h3>Analyzing the lyrics on billboard's top 100 charts, 1965 to 2015.</h3> -->
 	</div>
 
 
-	<div class = "searchBox">
 
-		<div class = "searchBar">
-	  	<input type="text" placeholder="Enter a word, artist, year, or year range (e.g. 2005,2008 ; 1990-1996)" method="put" id="search">
-	  	<button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i></button>
-		</div>
-		
+			<div class = "searchBar">
+				<input type="search" placeholder="Enter a word, artist, year, or year range" method="put" id="search">
+
+			 </div>
+			 <button type="submit" onclick="sendToPage();" id="searchButton">
+				<img src="../static/search.png" height="10px">
+			
+			</button>
+
+
 		<div class = "checkBoxWrapper">
-			<div class = "checkArtist">
 				<input type="checkbox" id="artistCheck" name="artistCheck" onclick="toggleCheckbox()">
 				<label for="artistCheck"> Are you searching for an artist?</label><br>
-			</div>
-		</div>
-
 	</div>
+
+
 
 </div>
 

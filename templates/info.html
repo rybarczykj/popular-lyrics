@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+	<link rel="stylesheet" href="../static/siteStyle.css">
 <title>The Best Lyrical Analysis Website of All Time</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,27 +11,28 @@
 <body>
 
 	<div class="iconRow">
-	       <a href="/">
-	       <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
-	       <a href="/info.html">
-	        <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
+        <a href="/">
+        <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
+        <a href="/info.html">
+         <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
 
 
-			<div class = "form2">
-          <button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i>
+
+        <div class = "minibar">
+            <button type="submit" onclick="sendToPage();" id="searchButton"> 
+                <img src="../static/search.png" height="10px">
             </button>
-          <input type="text" placeholder="Enter a word, year, or year range" method="put" id="search">
+            <input type="search" placeholder="Enter a word, year, or year range" method="put" id="search">
+        </div>
 
-				</div>
-
-</div>
+   </div>
 
 </br>
 </br>
 
 
 <div class="infoWrapper">
-				<div class = "dataHeader"> About</div>
+				<div class = "header"> About</div>
 		<h3>Who made this and why?</h3>
 		<p> This website was made as final project for a Software Design class at Carleton College 
 			in winter 2020 by Jack, Will, and Zev.</p>

@@ -5,28 +5,30 @@
   <meta charset="utf-8">
 
   <title>Data page template for word entry</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='siteStyle.css') }}">
+  <link rel="stylesheet" href="../static/siteStyle.css">
 </head>
 
 
 <body>
+        <div class="iconRow">
+            <a href="/">
+                <img src="../static/home.png" alt="Home page icon">
+            </a>
+            <a href="/info.html">
+             <img src="../static/infoIcon.png" alt="info page icon"></a>
+     
+             <div class = "minibar">
+                <button type="submit" onclick="sendToPage();" id="searchButton">
+                    <img src="../static/search.png" height="10px">
+                </button>
+                <input type="search" placeholder="Enter a word, year, or year range" method="put" id="search">
+            
+            </div>
+            
+     </div>
+     
 
-<div class="iconRow">
-       <a href="/">
-       <img src="{{ url_for('static', filename='home.png') }}" alt="Home page icon"></a>
-       <a href="/info.html">
-        <img src="{{ url_for('static', filename='infoIcon.png') }}" alt="info page icon"></a>
 
-
-
-<div class = "form2">
-          <button type="submit" onclick="sendToPage();" id="searchButton"> <i class="fa fa-search">search </i>
-            </button>
-          <input type="text" placeholder="Enter a word, year, or year range" method="put" id="search">
-
-</div>
-
-</div>
 
 </br>
 </br>
@@ -39,29 +41,30 @@
 
 
 <!-- shows two relevant lists on the left of the page: top words, top songs!-->
-<div class = "listBox">
+<div class="centeredBox">
 
-    <div class="boxBorder centered">
-    <h3>
-        Lyrical history of {{ word }}
-    </h3>
-    Top 25 songs that use {{ word }} in their lyrics
-
-    <div class="scroller">
-        <table>
-            <tr><th>Count</th><th>Song</th></tr>
-            {% for songAndCount in topSongs %}
-                <tr><td>{{ songAndCount[1] }} </td><td>{{ songAndCount[0] }}</td></tr>
-            {% endfor %}
-        </table>
+    <div class="card">
+        <h3>
+            Lyrical history of {{ word }}
+        </h3>
+        Top 25 songs that use {{ word }} in their lyrics
+    
+        <div class="scroller">
+            <table>
+                <tr><th>Count</th><th>Song</th></tr>
+                {% for songAndCount in topSongs %}
+                    <tr><td>{{ songAndCount[1] }} </td><td>{{ songAndCount[0] }}</td></tr>
+                {% endfor %}
+            </table>
+        </div>
+        </div>
+    
+    <div class ="card">
+           <img src ="../static/new_plot.png" alt="Chart of word frequency by year">
     </div>
-    </div>
+    
 </div>
-
-<div class ="wordCloudBox">
-       <img src ="{{ url_for('static', filename='new_plot.png') }}" alt="Chart of word frequency by year">
-</div>
-
+ 
 <script type="text/javascript">
 
 /* js code to properly format the url from the user input */
