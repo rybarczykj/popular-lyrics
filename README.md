@@ -1,11 +1,8 @@
 # Music's most popular words
-A website to analyze the lyrics of the top 100 Billboard charts from 1964-2015, authored by Jack Rybarczyk, Will Gleason, and Zev Buffet-Davis at Carleton College for CS 257 Software Design, Winter 2020 
-
-
-
+A website to analyze the lyrics of the top 100 Billboard charts from 1964-2015.
 
 Link: [http://ec2-18-205-57-211.compute-1.amazonaws.com](http://ec2-18-205-57-211.compute-1.amazonaws.com)
-
+EDIT: As of 2021, this website is down. The cost to keep it up was becoming too high.
 
 The website is a search tool, in which one can input 3 types of queries:
 
